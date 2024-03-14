@@ -9,9 +9,61 @@
 
 html,
 body {
-  width: 100vh;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 body {
   font-family: "D2Coding";
+  background-color: #f1f2f6;
+  color: #2f3542;
+}
+
+.root {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.main {
+  width: 100%;
+  .opening {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    @media (min-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    gap: 2rem;
+    .opening_image {
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      background-image: url("https://avatars.githubusercontent.com/u/106135040?v=4");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .opening_profile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .opening_profile-name {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+      .opening_profile-intro {
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-align: left;
+      }
+    }
+  }
 }
