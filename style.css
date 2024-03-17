@@ -10,12 +10,13 @@
 html,
 body {
   width: 100%;
-  height: auto;
+  height: fit-content;
 }
 body {
   font-family: "D2Coding";
   background-color: #f1f2f6;
   color: #2f3542;
+  position: relative;
 }
 
 .root {
@@ -25,9 +26,11 @@ body {
   gap: 4rem;
   padding: 4rem 2rem 2rem 2rem;
 }
+
 .main {
   width: 100%;
 }
+
 .opening {
   width: 100%;
   display: grid;
@@ -101,24 +104,22 @@ body {
       gap: 1rem;
       align-items: center;
       font-weight: bold;
-
-      & div:nth-child(1) {
-        filter: grayscale(100%);
-      }
-      & div:nth-child(1):hover {
-        filter: grayscale(0%);
-      }
     }
     .history_content-ku,
     .history_content-daesang,
     .history_content-ssafy {
+      filter: grayscale(100%);
       height: 50px;
+      &:hover {
+        filter: grayscale(0%);
+      }
       .history_content--logo {
         height: 100%;
         background-repeat: no-repeat;
         background-size: contain;
       }
     }
+
     .history_content-ku {
       &:hover {
         color: #7c0019;
@@ -179,17 +180,16 @@ body {
     }
   }
 
-  .thought {
-    .thought_content {
-      margin-left: 1rem;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      font-size: 1.5rem;
-      height: 50px;
-      &:hover {
-        text-decoration: underline;
-      }
+  .thought_content-collab,
+  .thought_content-customer {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 50px;
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -207,7 +207,8 @@ body {
 
   .contact_github,
   .contact_instagram,
-  .contact_naver {
+  .contact_naver,
+  .contact_google {
     display: flex;
     align-items: end;
     margin-left: 1rem;
@@ -231,6 +232,11 @@ body {
     filter: invert(51%) sepia(29%) saturate(4273%) hue-rotate(113deg)
       brightness(102%) contrast(98%);
   }
+
+  .contact_google span:hover {
+    filter: invert(64%) sepia(78%) saturate(5213%) hue-rotate(201deg)
+      brightness(99%) contrast(93%);
+  }
 }
 
 .footer {
@@ -241,4 +247,33 @@ body {
     text-decoration: underline;
     cursor: pointer;
   }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.collaboration,
+.customer-centered {
+  z-index: 1;
+  font-family: "D2Coding";
+  width: 60%;
+  margin-top: 5vh;
+  height: 80vh;
+  font-size: 2rem;
+  background-color: #f1f2f6;
+  border-radius: 3rem;
+  padding: 3rem;
+}
+
+.close_button {
+  cursor: pointer;
 }
