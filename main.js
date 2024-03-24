@@ -5,13 +5,24 @@ const instagram = document.querySelector(".contact_instagram span");
 const naver = document.querySelector(".contact_naver span");
 const google = document.querySelector(".contact_google span");
 
-const collab_link = document.querySelector(".thought_content-collab");
-const customer_link = document.querySelector(".thought_content-customer");
+const thought_collab = document.querySelector(".thought_content-collab");
+const thought_customer = document.querySelector(".thought_content-customer");
 
 const background = document.querySelector(".background");
 const collab = document.querySelector(".collaboration");
 const customer = document.querySelector(".customer-centered");
 const close_button = document.querySelectorAll(".close_button");
+
+const moseley = document.querySelector(".collaboration .reference");
+
+const setBackground = () => {
+  body.style.overflow = "hidden";
+  background.style.display = "flex";
+};
+
+const openWindowNewTab = (url) => {
+  window.open(url, "_blank");
+};
 
 const setTitle = () => {
   github.setAttribute("title", "Github 보러가기");
@@ -21,27 +32,25 @@ const setTitle = () => {
 };
 
 const setPlatformEvent = () => {
-  github.addEventListener("click", (__) => {
-    window.open("https://github.com/sweetandsourkiss", "_blank");
-  });
+  github.addEventListener("click", () =>
+    openWindowNewTab("https://github.com/sweetandsourkiss")
+  );
 
-  instagram.addEventListener("click", (__) => {
-    window.open("https://www.instagram.com/h0___0z/", "_blank");
-  });
+  instagram.addEventListener("click", (__) =>
+    openWindowNewTab("https://www.instagram.com/h0___0z/")
+  );
 
-  naver.addEventListener("click", (__) => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=mooul0529@naver.com",
-      "_blank"
-    );
-  });
+  naver.addEventListener("click", (__) =>
+    openWindowNewTab(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=mooul0529@naver.com"
+    )
+  );
 
-  google.addEventListener("click", () => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=mooul0529@gmail.com",
-      "_blank"
-    );
-  });
+  google.addEventListener("click", () =>
+    openWindowNewTab(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=mooul0529@gmail.com"
+    )
+  );
 };
 
 const initialSetting = () => {
@@ -58,21 +67,22 @@ const setThoughtEvent = () => {
     });
   });
 
-  collab_link.addEventListener("click", () => {
-    body.style.overflow = "hidden";
-    background.style.display = "flex";
+  thought_collab.addEventListener("click", () => {
+    setBackground();
     collab.style.display = "block";
   });
 
-  customer_link.addEventListener("click", () => {
-    body.style.overflow = "hidden";
-    background.style.display = "flex";
+  thought_customer.addEventListener("click", () => {
+    setBackground();
     customer.style.display = "block";
   });
+
+  moseley.addEventListener("click", () =>
+    openWindowNewTab("https://blog.jostle.me/blog/collaboration-vs-cooperation")
+  );
 };
 
 const init = () => {
-  console.log(body);
   initialSetting();
   setPlatformEvent();
   setThoughtEvent();
