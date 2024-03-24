@@ -263,6 +263,7 @@ body {
 
 .collaboration,
 .customer-centered {
+  overflow-y: auto;
   z-index: 1;
   font-family: "D2Coding";
   width: 60%;
