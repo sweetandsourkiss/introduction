@@ -8,16 +8,18 @@ const google = document.querySelector(".contact_google span");
 const thought_collab = document.querySelector(".thought_content-collab");
 const thought_customer = document.querySelector(".thought_content-customer");
 
+const myThought = document.querySelector(".my-thought");
 const background = document.querySelector(".background");
 const collab = document.querySelector(".collaboration");
 const customer = document.querySelector(".customer-centered");
 const close_button = document.querySelectorAll(".close_button");
 
-const moseley = document.querySelector(".collaboration .reference");
+const moseley = document.querySelector(".collaboration .thought-source");
 
 const setBackground = () => {
   body.style.overflow = "hidden";
-  background.style.display = "flex";
+  myThought.style.height = "100%";
+  myThought.style.top = `${window.scrollY}px`;
 };
 
 const openWindowNewTab = (url) => {
@@ -55,7 +57,7 @@ const setPlatformEvent = () => {
 
 const initialSetting = () => {
   body.style.overflow = "auto";
-  background.style.display = "none";
+  myThought.style.height = "0%";
   collab.style.display = "none";
   customer.style.display = "none";
 };
@@ -65,6 +67,10 @@ const setThoughtEvent = () => {
     button.addEventListener("click", () => {
       initialSetting();
     });
+  });
+
+  background.addEventListener("click", () => {
+    initialSetting();
   });
 
   thought_collab.addEventListener("click", () => {
