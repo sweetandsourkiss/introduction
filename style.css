@@ -271,7 +271,7 @@ body {
 }
 
 .collaboration,
-.customer-centered {
+.customer-centric {
   overflow-y: auto;
   z-index: 1;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -309,4 +309,11 @@ body {
 .wavy {
   text-decoration: underline wavy;
   text-underline-offset: 4px;
+}
+
+.optimistic {
+  cursor: pointer;
+  &:hover {
+    font-weight: 600;
+  }
 }
