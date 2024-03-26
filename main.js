@@ -11,10 +11,12 @@ const thought_customer = document.querySelector(".thought_content-customer");
 const myThought = document.querySelector(".my-thought");
 const background = document.querySelector(".background");
 const collab = document.querySelector(".collaboration");
-const customer = document.querySelector(".customer-centered");
+const customer = document.querySelector(".customer-centric");
 const close_button = document.querySelectorAll(".close_button");
 
 const moseley = document.querySelector(".collaboration .thought-source");
+const y_hur = document.querySelector(".customer-centric .thought-source");
+const optimistic_update = document.querySelector(".optimistic");
 
 const setBackground = () => {
   body.style.overflow = "hidden";
@@ -86,6 +88,16 @@ const setThoughtEvent = () => {
   moseley.addEventListener("click", () =>
     openWindowNewTab("https://blog.jostle.me/blog/collaboration-vs-cooperation")
   );
+
+  y_hur.addEventListener("click", () =>
+    openWindowNewTab("http://jazzcompany.kr/customer-centric/")
+  );
+
+  optimistic_update.addEventListener("click", () => {
+    openWindowNewTab(
+      "https://tecoble.techcourse.co.kr/post/2023-08-15-how-to-improve-ux-with-optimistic-update/"
+    );
+  });
 };
 
 const init = () => {
